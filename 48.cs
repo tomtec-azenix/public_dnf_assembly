@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-[assembly:AssemblyVersionAttribute("4.5")]
+[assembly:AssemblyVersionAttribute("4.8")]
 
 internal class Program
 {
