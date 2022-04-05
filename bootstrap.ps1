@@ -19,12 +19,12 @@ Expand-Archive "SysinternalsSuite.zip"
 # curl "https://go.microsoft.com/fwlink/?linkid=2088517" -UseBasicParsing -OutFile "dnf_installer.exe" # Download dnf sdk4.8
 # .\dnf_installer /q /norestart
 
-
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force # has to be run by hand to solve nuget
-
 $env:Path += "C:\Windows\Microsoft.NET\Framework64\v4.0.30319;"
 csc -out:".\45.exe" ".\45.cs" -r:"C:\Windows\assembly\NativeImages_v4.0.30319_32\System.Net.Http\1f5683ca41b9cd1c0e120dac11c6364e\System.Net.Http.ni.dll"
 csc -out:".\48.exe" ".\48.cs" -r:"C:\Windows\assembly\NativeImages_v4.0.30319_32\System.Net.Http\1f5683ca41b9cd1c0e120dac11c6364e\System.Net.Http.ni.dll"
 
-start -wait .\wireshark.exe
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force # has to be run by hand to solve nuget
+
+start -wait .\wireshark.exe # has to be run by hand to solve oem issue
+
